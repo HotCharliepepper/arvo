@@ -1,0 +1,16 @@
+{
+  "name": "arvo-hotel-r4",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs --preview",
+    "build:preview": "node scripts/build.mjs --preview",
+    "build:review": "node scripts/build.mjs --preview --local-media",
+    "build:production": "node scripts/build.mjs --production",
+    "test": "node --test scripts/test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
