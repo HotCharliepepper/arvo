@@ -65,3 +65,26 @@ Earlier local test passes are not a substitute for final-commit verification.
    reservation wording. Do not make a test reservation or payment.
 7. Confirm noindex in HTML/headers, media exclusion in public build, and
    production/CI private-profile rejection before requesting any release.
+
+## Verified remote result after recovery
+
+- Code commit: 1ca42361e23ede86df0f4cad104b10fac313596d.
+- GitHub Actions run 40707432188, job 122883207000: success.
+  Node 22.23.3: 14 tests passed, 0 failed, 0 skipped; preview build succeeded.
+  The root-file comparison against main 502ea2b passed.
+- Public-safe build reports eight room types and zero supplied media files.
+- Netlify deploy 6ae2082bd8819d450bb1aba0: ready, context deploy-preview,
+  review_id 1, branch work/r4-visual-booking-review-20261028,
+  published_at null. One response-header rule deployed successfully.
+- Preview: https://deploy-preview-1--sacheon-arvo.netlify.app
+- Immutable preview: https://6ae2082bd8819d450bb1aba0--sacheon-arvo.netlify.app
+- Netlify generated screenshot:
+  https://d33wubrfki0l68.cloudfront.net/6ae2082bd8819d450bb1aba0/screenshot_2026-10-28-14-35-40-0000.webp
+  This is a hosting-generated capture of the public-safe layout, not mobile
+  QA evidence or the private real-media review. It could not be visually
+  inspected after the browser environment disconnected.
+- Final production-state read still reports deploy 6ad71ed87994dfa29d18c874.
+  main still resolves to 502ea2be3be570484e7d8b2afd4ef00a0648d8be.
+- The final preview and screenshot URLs were returned by Netlify. A subsequent
+  web-text fetch could not access them, so the deployment result establishes
+  hosting success; post-deploy interactive browsing remains unverified.
