@@ -1,0 +1,177 @@
+{
+  "project": "ARVO HOTEL R4 — visual experience / OTA_ONLY",
+  "snapshotDate": "2026-10-28",
+  "releaseVersion": "R4.0-review",
+  "reviewMode": true,
+  "productionApproved": false,
+  "business": {
+    "displayName": "호텔 아르보",
+    "nameEn": "ARVO HOTEL",
+    "displayNameApproved": false,
+    "address": "경상남도 사천시 사천읍 진삼로 1477-47",
+    "addressApproved": false,
+    "phone": "",
+    "phoneApproved": false,
+    "officialWebsite": "",
+    "canonicalApproved": false,
+    "schemaType": "LodgingBusiness",
+    "schemaTypeApproved": false,
+    "legalDisplayName": "",
+    "registrationNumber": "",
+    "legalInfoApproved": false
+  },
+  "reservation": {
+    "nol": "https://nol.yanolja.com/stay/domestic/1000099461",
+    "yeogi": "https://www.yeogi.com/domestic-accommodations/57753"
+  },
+  "roomInventoryApproved": false,
+  "policyApproved": false,
+  "photoRightsApproved": false,
+  "securityReviewClosed": false,
+  "booking": {
+    "state": "OTA_ONLY",
+    "vendit": {
+      "approved": false,
+      "module": null,
+      "integrationMethod": null,
+      "roomMappingApproved": false,
+      "feeTermsApproved": false,
+      "inventoryApproved": false,
+      "cancellationApproved": false
+    }
+  },
+  "editorial": {
+    "heroCopyApproved": false,
+    "paletteStatus": "RECOMMENDATION — lobby reference, not brand-approved"
+  },
+  "rooms": [
+    {
+      "id": "standard",
+      "name": "스탠다드",
+      "en": "STANDARD",
+      "tagLabel": "기본 숙박",
+      "tags": [
+        "basic",
+        "work"
+      ],
+      "description": "사천에서의 일정을 마친 뒤 머무를 기본 객실을 찾는 분을 위한 선택지입니다.",
+      "details": "침대 구성·기준 및 최대 인원·제공 시설은 현재 운영 확인 중입니다. 선택한 날짜의 판매 상품과 비교해 주세요.",
+      "mappingApproved": false,
+      "photoId": null,
+      "approvedDetails": "",
+      "sourceStatus": "CONFIRMED / OTA DISPLAY — OPERATING NEED VERIFY"
+    },
+    {
+      "id": "deluxe",
+      "name": "디럭스",
+      "en": "DELUXE",
+      "tagLabel": "기본 숙박",
+      "tags": [
+        "basic",
+        "work"
+      ],
+      "description": "스탠다드와 비교하며 객실 환경을 고르고 싶은 분을 위한 유형입니다.",
+      "details": "침대 구성·기준 및 최대 인원·제공 시설은 현재 운영 확인 중입니다. 선택한 날짜의 판매 상품과 비교해 주세요.",
+      "mappingApproved": false,
+      "photoId": null,
+      "approvedDetails": "",
+      "sourceStatus": "CONFIRMED / OTA DISPLAY — OPERATING NEED VERIFY"
+    },
+    {
+      "id": "twin",
+      "name": "트윈",
+      "en": "TWIN",
+      "tagLabel": "동행 숙박",
+      "tags": [
+        "together",
+        "work"
+      ],
+      "description": "동행인의 침대 구성을 먼저 비교할 때 살펴볼 유형입니다.",
+      "details": "침대 구성·기준 및 최대 인원·제공 시설은 현재 운영 확인 중입니다. 선택한 날짜의 판매 상품과 비교해 주세요.",
+      "mappingApproved": false,
+      "photoId": null,
+      "approvedDetails": "",
+      "sourceStatus": "CONFIRMED / OTA DISPLAY — OPERATING NEED VERIFY"
+    },
+    {
+      "id": "twinvip",
+      "name": "트윈 VIP",
+      "en": "TWIN VIP",
+      "tagLabel": "동행 숙박",
+      "tags": [
+        "together"
+      ],
+      "description": "동행 인원과 침대 구성을 함께 확인할 때 살펴볼 유형입니다.",
+      "details": "침대 구성·기준 및 최대 인원·제공 시설은 현재 운영 확인 중입니다. 선택한 날짜의 판매 상품과 비교해 주세요.",
+      "mappingApproved": false,
+      "photoId": null,
+      "approvedDetails": "",
+      "sourceStatus": "CONFIRMED / OTA DISPLAY — OPERATING NEED VERIFY"
+    },
+    {
+      "id": "vip",
+      "name": "VIP",
+      "en": "VIP",
+      "tagLabel": "휴식 중심",
+      "tags": [
+        "rest",
+        "basic"
+      ],
+      "description": "객실별 휴식 시설과 기본 객실의 차이를 비교해 보세요.",
+      "details": "침대 구성·기준 및 최대 인원·제공 시설은 현재 운영 확인 중입니다. 선택한 날짜의 판매 상품과 비교해 주세요.",
+      "mappingApproved": false,
+      "photoId": null,
+      "approvedDetails": "",
+      "sourceStatus": "CONFIRMED / OTA DISPLAY — OPERATING NEED VERIFY"
+    },
+    {
+      "id": "pc2",
+      "name": "2PC",
+      "en": "2PC",
+      "tagLabel": "엔터테인먼트",
+      "tags": [
+        "rest",
+        "together"
+      ],
+      "description": "PC 이용을 중요하게 생각한다면 장비와 객실 조건을 함께 살펴보세요.",
+      "details": "침대 구성·기준 및 최대 인원·제공 시설은 현재 운영 확인 중입니다. 선택한 날짜의 판매 상품과 비교해 주세요.",
+      "mappingApproved": false,
+      "photoId": null,
+      "approvedDetails": "",
+      "sourceStatus": "CONFIRMED / OTA DISPLAY — OPERATING NEED VERIFY"
+    },
+    {
+      "id": "signature2",
+      "name": "시그니처 2인",
+      "en": "SIGNATURE 02",
+      "tagLabel": "시그니처",
+      "tags": [
+        "rest",
+        "signature"
+      ],
+      "description": "사우나 표기가 있는 판매 유형입니다. 현재 운영 여부와 이용 조건은 예약 전에 확인해 주세요.",
+      "details": "침대 구성·기준 및 최대 인원·제공 시설은 현재 운영 확인 중입니다. 선택한 날짜의 판매 상품과 비교해 주세요.",
+      "mappingApproved": false,
+      "photoId": null,
+      "approvedDetails": "",
+      "sourceStatus": "CONFIRMED / OTA DISPLAY — OPERATING NEED VERIFY"
+    },
+    {
+      "id": "signature4",
+      "name": "시그니처 4인",
+      "en": "SIGNATURE 04",
+      "tagLabel": "시그니처",
+      "tags": [
+        "together",
+        "rest",
+        "signature"
+      ],
+      "description": "동행 인원과 사우나 조건을 함께 살펴볼 판매 유형입니다. 숫자는 유형명이며 승인 정원을 뜻하지 않습니다.",
+      "details": "침대 구성·기준 및 최대 인원·제공 시설은 현재 운영 확인 중입니다. 선택한 날짜의 판매 상품과 비교해 주세요.",
+      "mappingApproved": false,
+      "photoId": null,
+      "approvedDetails": "",
+      "sourceStatus": "CONFIRMED / OTA DISPLAY — OPERATING NEED VERIFY"
+    }
+  ]
+}

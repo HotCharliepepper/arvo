@@ -1,0 +1,22 @@
+name: R4 isolated review checks
+on:
+  push:
+    branches: ["work/r4-visual-booking-review-20261028"]
+  pull_request:
+    paths: ["r4/**", "netlify.toml", ".github/workflows/r4-review.yml"]
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm --prefix r4 test
+      - run: npm --prefix r4 run build:preview
+      - name: Verify main-era root files remain unchanged
+        run: |
+          git fetch --depth=1 origin 502ea2be3be570484e7d8b2afd4ef00a0648d8be
+          git diff --exit-code 502ea2be3be570484e7d8b2afd4ef00a0648d8be HEAD -- index.html README.md
