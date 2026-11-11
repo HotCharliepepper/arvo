@@ -32,7 +32,8 @@ if(production) {
   selectedMedia:['hero','sauna','bath','lamp','sign','filmPoster','film'].every(available),
   videoRelease:manifest.assets.film.peopleReleaseApproved===true,
   arrival:!!data.approvedGuide?.parking&&!!data.approvedGuide?.checkin,
-  editorialRelease:data.editorial.publicationCopyApproved===true
+  editorialRelease:data.editorial.publicationCopyApproved===true,
+  arrivalFilm:!data.heroFilm?.enabled||(available('arrivalFilm')&&available('arrivalPoster')&&manifest.assets.arrivalFilm.peopleReleaseApproved===true)
  };
  const blocked=Object.keys(requirements).filter(k=>!requirements[k]);
  if(blocked.length) throw new Error('PUBLICATION BLOCKED — approval required: '+blocked.join(', '));
@@ -57,13 +58,15 @@ const cards=data.rooms.map((r,i)=>'<article class="room-card" data-room="'+esc(r
 const faq=faqRows.map(([id,q,a],i)=>'<details class="faq-item" id="faq-'+id+'"><summary><span class="faq-index">0'+(i+1)+'</span><span>'+q+'</span><span class="faq-icon" aria-hidden="true">+</span></summary><p>'+esc(production?data.approvedFaqAnswers[id]:a)+'</p></details>').join('\n');
 const filmReady=available('film')&&available('filmPoster');
 const film=filmReady?'<div class="film-frame" data-film>'+picture('filmPoster','film-poster')+'<video data-video controls playsinline preload="none" poster="'+asset(manifest.assets.filmPoster.webp)+'" aria-label="제공 원본에서 인물 없는 침대 장면을 발췌한 무음 객실 영상" aria-describedby="film-description" hidden><source data-src="'+asset(manifest.assets.film.src)+'" type="video/mp4">이 브라우저에서는 영상 재생을 지원하지 않습니다.</video><button type="button" class="film-toggle" data-video-toggle aria-pressed="false">객실 영상 재생 <span aria-hidden="true">▶</span></button><p class="film-status" data-video-status role="status" aria-live="polite">선택할 때만 영상을 불러옵니다.</p></div>':'<div class="film-frame">'+picture('filmPoster')+'<p class="film-status">실사 영상은 공개 사용 승인 후 연결됩니다.</p></div>';
+const arrivalReady=(localMedia||production)&&available('arrivalFilm')&&available('arrivalPoster')&&(!production||manifest.assets.arrivalFilm.peopleReleaseApproved===true);
+const arrivalFilm=arrivalReady?'<video class="r41-hero-video" data-hero-video muted loop playsinline preload="metadata" poster="'+asset(manifest.assets.arrivalPoster.webp)+'" aria-label="검색·도착·체크인 연출과 실제 아르보 로비를 결합하는 히어로 영상"><source src="'+asset(manifest.assets.arrivalFilm.src)+'" type="video/mp4"></video><button class="r41-video-control" type="button" data-hero-toggle aria-label="히어로 영상 일시정지 및 재생" aria-pressed="false">영상 재생 ▶</button>':'<div class="r41-story-overlay"><strong>ARRIVAL FILM · R4.1</strong><span>영상·인물 연출 및 현장 사용 승인 대기</span></div>';
 const schema=production?'<script type="application/ld+json">'+JSON.stringify({'@context':'https://schema.org','@type':b.schemaType,name:b.displayName,url:b.officialWebsite,telephone:b.phone,address:{'@type':'PostalAddress',streetAddress:b.address,addressCountry:'KR'}}).replace(/</g,'\\u003c')+'</script>':'';
 const vars={
  ROBOTS:production?'index,follow':'noindex,nofollow,noarchive',
  MODE:production?'production':localMedia?'private-review':'public-preview',
  PRODUCTION_META:production?'<link rel="canonical" href="'+esc(b.officialWebsite)+'"><meta property="og:url" content="'+esc(b.officialWebsite)+'">'+schema:'',
- RIBBON:production?'':'<aside class="review-ribbon">R4 디자인 검토본 <span>· 운영 정보와 사진 공개 승인 전</span></aside>',
- HERO:picture('hero','hero-picture',true),
+ RIBBON:production?'':'<aside class="review-ribbon">R4.1 영상 히어로 검토본 <span>· 운영 정보와 사진 공개 승인 전</span></aside>',
+ HERO:picture('hero','hero-picture',true),ARRIVAL_FILM:arrivalFilm,
  HERO_CAPTION:production?'ARVO / SACHEON':available('hero')?'임시 공간 이미지 · 로비 사인 / 승인된 객실 전경으로 교체 예정':'사진 공개 승인 후 실사 적용 · 대표 객실 전경 확보 대기',
  ROOM_GUIDANCE:production?'시설·인원 조건은 선택한 날짜의 판매 상품에서도 확인해 주세요.':'객실명은 OTA 판매 유형 기준입니다. 침대·정원·시설과 객실별 사진은 운영 확인 중입니다.',
  ROOM_CARDS:cards,SAUNA:picture('sauna'),BATH:picture('bath'),
@@ -79,7 +82,7 @@ const template=fs.readFileSync(path.join(root,'src/index.html'),'utf8');
 const html=template.replace(/\{\{([A-Z_]+)\}\}/g,(_,key)=>{if(!(key in vars)) throw new Error('Unknown template token: '+key);return vars[key];});
 const out=path.join(root,localMedia?'dist-review':'dist');
 fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'index.html'),html);
-for(const p of ['assets/css/style.css','assets/js/site.js','assets/images/favicon.svg']) {fs.mkdirSync(path.dirname(path.join(out,p)),{recursive:true});fs.copyFileSync(path.join(root,p),path.join(out,p));}
+for(const p of ['assets/css/style.css','assets/css/hero-r41.css','assets/js/site.js','assets/js/hero-r41.js','assets/images/favicon.svg']) {fs.mkdirSync(path.dirname(path.join(out,p)),{recursive:true});fs.copyFileSync(path.join(root,p),path.join(out,p));}
 for(const p of publishedAssets) {const dest=path.join(out,p.replace('review-media/','assets/media/'));fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(path.join(root,p),dest);}
 fs.writeFileSync(path.join(out,'robots.txt'),production?'User-agent: *\nAllow: /\nSitemap: '+b.officialWebsite.replace(/\/$/,'')+'/sitemap.xml\n':'User-agent: *\n# noindex supplied in HTML and response headers; allow it to be read.\n');
 fs.writeFileSync(path.join(out,'_headers'),'/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n'+(production?'':'  X-Robots-Tag: noindex, nofollow, noarchive\n  Cache-Control: private, no-store\n'));
