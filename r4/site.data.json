@@ -1,7 +1,7 @@
 {
-  "project": "ARVO HOTEL R4 — visual experience / OTA_ONLY",
-  "snapshotDate": "2026-10-28",
-  "releaseVersion": "R4.0-review",
+  "project": "ARVO HOTEL R4.1 — Arrival Film × Booking UX / OTA_ONLY",
+  "snapshotDate": "2026-11-11",
+  "releaseVersion": "R4.1-arrival-review",
   "reviewMode": true,
   "productionApproved": false,
   "business": {
@@ -173,5 +173,19 @@
       "approvedDetails": "",
       "sourceStatus": "CONFIRMED / OTA DISPLAY — OPERATING NEED VERIFY"
     }
-  ]
+  ],
+  "heroFilm": {
+    "enabled": true,
+    "releaseApproved": false,
+    "sourceState": "RUNWAY_STAGED_PREVIEW / REAL_HOTEL_LOBBY_ANCHOR",
+    "scenePlan": [
+      "search_staged",
+      "hotel_arrival_verify_location",
+      "suitcase_staged",
+      "checkin_staged",
+      "real_lobby_sign_verify_rights"
+    ],
+    "publicClaims": "No actual guest or real check-in scene claimed",
+    "runtime": "local review only until approved"
+  }
 }
