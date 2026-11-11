@@ -14,6 +14,17 @@ const run=(args=[],cwd=root,env={})=>execFileSync(process.execPath,[path.join(cw
 run(['--preview']);
 const html=fs.readFileSync(path.join(root,'dist/index.html'),'utf8');
 const files=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?files(path.join(dir,e.name)):[path.join(dir,e.name)]);
+test('R4.1 arrival hero retains booking routes and only exposes staged video in private review',()=>{
+ assert.match(html,/data-hero/);
+ assert.match(html,/찾던 곳이, 눈앞에/);
+ assert.match(html,/href="#choose"/);
+ assert.match(html,/href="#reserve"/);
+ assert.ok(!html.includes('arrival-film.mp4'));
+ assert.ok(!html.includes('<video'));
+ assert.equal(data.booking.state,'OTA_ONLY');
+ assert.equal(data.heroFilm.releaseApproved,false);
+ assert.equal(manifest.assets.arrivalFilm.peopleReleaseApproved,false);
+});
 test('eight R3 type IDs preserved',()=>{
  assert.deepEqual(data.rooms.map(r=>r.id),['standard','deluxe','twin','twinvip','vip','pc2','signature2','signature4']);
  assert.equal((html.match(/class="room-card"/g)||[]).length,8);
@@ -67,13 +78,13 @@ test('CI, Netlify and production reject private-media build',()=>{
 test('private media bundling and deferred video; false string approvals do not leak',()=>{
  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'arvo-r4-'));
  try{
-  for(const p of ['site.data.json','media-manifest.json','src/index.html','scripts/build.mjs','scripts/booking.mjs','assets/css/style.css','assets/js/site.js','assets/images/favicon.svg']){fs.mkdirSync(path.dirname(path.join(tmp,p)),{recursive:true});fs.copyFileSync(path.join(root,p),path.join(tmp,p));}
+  for(const p of ['site.data.json','media-manifest.json','src/index.html','scripts/build.mjs','scripts/booking.mjs','assets/css/style.css','assets/css/hero-r41.css','assets/js/site.js','assets/js/hero-r41.js','assets/images/favicon.svg']){fs.mkdirSync(path.dirname(path.join(tmp,p)),{recursive:true});fs.copyFileSync(path.join(root,p),path.join(tmp,p));}
   fs.mkdirSync(path.join(tmp,'review-media'),{recursive:true});
   for(const a of Object.values(manifest.assets))for(const p of [a.webp,a.small,a.avif,a.src].filter(Boolean))fs.writeFileSync(path.join(tmp,p),'fixture');
   run(['--local-media'],tmp,{CI:'',NETLIFY:''});
   const reviewed=fs.readFileSync(path.join(tmp,'dist-review/index.html'),'utf8');
   assert.match(reviewed,/<source data-src="assets\/media\/room-film.mp4"/);
-  assert.match(reviewed,/<video[^>]*preload="none"/);assert.ok(!/<video[^>]*autoplay/.test(reviewed));assert.ok(!/<source src=/.test(reviewed));
+  assert.match(reviewed,/<video[^>]*preload="none"/);assert.ok(!/<video[^>]*autoplay/.test(reviewed));assert.match(reviewed,/<source src="assets\/media\/arrival-film.mp4"/);
   assert.ok(fs.existsSync(path.join(tmp,'dist-review/assets/media/room-film.mp4')));
   run(['--preview'],tmp);assert.ok(!fs.existsSync(path.join(tmp,'dist/assets/media')));
   const m=structuredClone(manifest);m.assets.hero.rightsApproved='false';m.assets.hero.contentApproved='true';

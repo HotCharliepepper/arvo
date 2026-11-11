@@ -10,7 +10,7 @@
 <meta property="og:description" content="객실을 비교하고, 이용 조건을 확인하고, 나에게 맞는 하루를 선택하세요.">
 {{PRODUCTION_META}}
 <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css"><script src="assets/js/site.js" defer></script>
+<link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/hero-r41.css"><script src="assets/js/site.js" defer></script><script src="assets/js/hero-r41.js" defer></script>
 </head>
 <body data-mode="{{MODE}}" data-booking-state="OTA_ONLY">
 <a class="skip-link" href="#main">본문 바로가기</a>
@@ -22,13 +22,33 @@
 <button type="button" class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span></button>
 </div><nav class="mobile-nav" id="mobile-menu" aria-label="모바일 메뉴" hidden><a href="#rooms">객실 선택</a><a href="#experience">공간의 장면</a><a href="#arrival">도착과 이용</a><a href="#reserve">예약 채널</a></nav></header>
 <main id="main">
-<section class="hero" aria-labelledby="hero-title"><div class="hero-copy">
-<p class="eyebrow"><span class="small-sun" aria-hidden="true">✳</span> SACHEON, GYEONGNAM</p>
-<h1 id="hero-title">사천에서의 하루,<br><em>내 일정에 맞게.</em></h1>
-<p class="hero-lede">출장을 마친 밤, 함께 머무는 시간.<br>이번 하루에 필요한 객실을 찾아보세요.</p>
-<a class="btn btn-primary" href="#rooms">객실 비교하기 <span aria-hidden="true">↗</span></a>
-<div class="hero-bottom"><span>아르보호텔 · 사천읍</span><a href="#choose" aria-label="방문 목적 선택으로 이동">EXPLORE <span aria-hidden="true">↓</span></a></div>
-</div><figure class="hero-visual">{{HERO}}<figcaption>{{HERO_CAPTION}}</figcaption><span class="hero-image-index" aria-hidden="true">A PLACE<br>FOR YOUR DAY.</span></figure></section>
+<section class="hero r41-hero" id="arrival-film" aria-labelledby="hero-title" data-hero>
+  <div class="r41-hero-media" aria-hidden="true">
+    <div class="r41-hero-fallback">{{HERO}}</div>
+    {{ARRIVAL_FILM}}
+    <div class="r41-hero-shade"></div>
+  </div>
+  <div class="wrap r41-hero-inner">
+    <div class="r41-hero-copy">
+      <p class="r41-kicker"><span class="r41-kicker-line" aria-hidden="true"></span> SEARCH. ARRIVE. STAY.</p>
+      <p class="r41-eye">찾던 곳이, 눈앞에.</p>
+      <h1 id="hero-title">사천에서의 하루,<br><em>내 일정에 맞게.</em></h1>
+      <p class="r41-lede">검색하던 숙소가 오늘 머무는 공간이 되는 순간.<br>이번 일정에 필요한 객실부터 살펴보세요.</p>
+      <div class="r41-hero-actions">
+        <a class="r41-primary" href="#choose">나에게 맞는 객실 찾기 <span aria-hidden="true">↗</span></a>
+        <a class="r41-secondary" href="#reserve">예약 채널 확인 <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="r41-hero-disclaimer">아르보호텔 · 경남 사천읍 <span aria-hidden="true">·</span> 실제 객실·예약 조건은 각 상품에서 확인</p>
+    </div>
+    <div class="r41-hero-foot">
+      <div class="r41-film-label">
+        <span class="r41-light-dot" aria-hidden="true"></span>
+        <span>ARVO ARRIVAL FILM <small>검색 · 도착 · 체크인</small></span>
+      </div>
+      <a href="#choose" class="r41-scroll">EXPLORE <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+</section>
 <section class="intent-section wrap" id="choose" aria-labelledby="intent-title">
 <div class="intent-heading"><p class="eyebrow">01 / YOUR KIND OF STAY</p><h2 id="intent-title">어떤 하루로 오시나요?</h2></div>
 <div class="hero-intents">

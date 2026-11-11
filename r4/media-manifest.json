@@ -107,6 +107,31 @@
       "rightsApproved": false,
       "contentApproved": false,
       "peopleReleaseApproved": false
+    },
+    "arrivalFilm": {
+      "original": "RUNWAY_ARRIVAL_SEQUENCE_PENDING_FINAL_STITCH.mp4",
+      "role": "brand",
+      "src": "review-media/arrival-film.mp4",
+      "durationLabel": "15+ sec / review",
+      "roomId": null,
+      "rightsApproved": false,
+      "contentApproved": false,
+      "peopleReleaseApproved": false,
+      "pending": "스토리 영상 내부 검토 중 · 실제 투숙객 또는 운영 장면이 아닙니다"
+    },
+    "arrivalPoster": {
+      "original": "ARVO_RUNWAY_STARTFRAME_LOBBY_16x9.jpg",
+      "role": "brand",
+      "webp": "review-media/arrival-poster-1280.webp",
+      "avif": "review-media/arrival-poster-1280.avif",
+      "small": "review-media/arrival-poster-640.webp",
+      "width": 1280,
+      "height": 720,
+      "alt": "아르보 로비 사인 사진을 바탕으로 한 영상 검토용 포스터",
+      "roomId": null,
+      "rightsApproved": false,
+      "contentApproved": false,
+      "pending": "입구·체크인 영상과 실제 로비 영상의 최종 승인 대기"
     }
   },
   "unusedOriginals": [
