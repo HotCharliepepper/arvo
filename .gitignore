@@ -1,0 +1,8 @@
+.netlify/
+.openai/
+r4/dist/
+r4/dist-review/
+r4/review-media/
+r4/evidence/
+node_modules/
+.DS_Store

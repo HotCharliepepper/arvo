@@ -1,0 +1,119 @@
+{
+  "approval": "NOT_APPROVED_FOR_PUBLICATION",
+  "runway": {
+    "taskId": "0b7e39da-842b-42d6-bf01-c90d5dab42a9",
+    "decision": "REJECTED",
+    "reason": "At ~1 s lamp duplicates/ghosts; later arch, wall texture and camera geometry diverge from original. Use still original."
+  },
+  "assets": {
+    "hero": {
+      "original": "36378.jpg",
+      "role": "brand",
+      "webp": "review-media/36378-1280.webp",
+      "avif": "review-media/36378-1280.avif",
+      "small": "review-media/36378-640.webp",
+      "width": 1280,
+      "height": 1280,
+      "alt": "제공 원본의 아르보 로비 사인과 테라코타 벽. 임시 공간 이미지이며 객실 사진이 아닙니다.",
+      "pending": "승인된 대표 객실 사진 대기",
+      "roomId": null,
+      "rightsApproved": false,
+      "contentApproved": false,
+      "captureDate": null
+    },
+    "sign": {
+      "original": "36378.jpg",
+      "role": "brand",
+      "webp": "review-media/36378-1280.webp",
+      "avif": "review-media/36378-1280.avif",
+      "small": "review-media/36378-640.webp",
+      "width": 1280,
+      "height": 1280,
+      "alt": "테라코타 벽과 목재 선반 안의 아르보 사인",
+      "pending": "공간 사진 공개 승인 대기",
+      "roomId": null,
+      "rightsApproved": false,
+      "contentApproved": false,
+      "captureDate": null
+    },
+    "lamp": {
+      "original": "36375.jpg",
+      "role": "brand",
+      "webp": "review-media/36375-1280.webp",
+      "avif": "review-media/36375-1280.avif",
+      "small": "review-media/36375-640.webp",
+      "width": 1280,
+      "height": 1280,
+      "alt": "목재 아치 안에 구형 조명이 설치된 실제 공간 디테일",
+      "pending": "공간 사진 공개 승인 대기",
+      "roomId": null,
+      "rightsApproved": false,
+      "contentApproved": false,
+      "captureDate": null
+    },
+    "sauna": {
+      "original": "36453.jpg",
+      "role": "detail",
+      "webp": "review-media/36453-1280.webp",
+      "avif": "review-media/36453-1280.avif",
+      "small": "review-media/36453-640.webp",
+      "width": 1280,
+      "height": 1280,
+      "alt": "목재 벽 안에 보이는 히터와 사우나 스톤. 적용 객실 확인 중.",
+      "pending": "공간 사진 공개 승인 대기",
+      "roomId": null,
+      "rightsApproved": false,
+      "contentApproved": false,
+      "captureDate": null
+    },
+    "bath": {
+      "original": "36459.jpg",
+      "role": "detail",
+      "webp": "review-media/36459-1280.webp",
+      "avif": "review-media/36459-1280.avif",
+      "small": "review-media/36459-640.webp",
+      "width": 1280,
+      "height": 1280,
+      "alt": "식재와 수전, 계단 형태의 수조 공간. 시설 명칭과 객실 확인 중.",
+      "pending": "공간 사진 공개 승인 대기",
+      "roomId": null,
+      "rightsApproved": false,
+      "contentApproved": false,
+      "captureDate": null
+    },
+    "filmPoster": {
+      "original": "20261015_210049.mp4 @ 20s",
+      "role": "room",
+      "webp": "review-media/film-poster-1280.webp",
+      "avif": "review-media/film-poster-1280.avif",
+      "small": "review-media/film-poster-640.webp",
+      "width": 1280,
+      "height": 1280,
+      "alt": "제공 영상 20초 지점의 침대 장면. 객실 유형 확인 중.",
+      "pending": "객실 영상·포스터 공개 승인 대기",
+      "roomId": null,
+      "rightsApproved": false,
+      "contentApproved": false,
+      "captureDate": null
+    },
+    "film": {
+      "original": "20261015_210049.mp4",
+      "role": "room",
+      "src": "review-media/room-film.mp4",
+      "durationLabel": "3 SEC",
+      "startSeconds": 17.5,
+      "endSeconds": 20.5,
+      "roomId": null,
+      "rightsApproved": false,
+      "contentApproved": false,
+      "peopleReleaseApproved": false
+    }
+  },
+  "unusedOriginals": [
+    "36377.jpg",
+    "36447.jpg",
+    "36448.jpg",
+    "36449.jpg",
+    "36450.jpg"
+  ]
+}

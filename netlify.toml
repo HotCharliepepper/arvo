@@ -1,0 +1,12 @@
+[build]
+  command = "npm --prefix r4 run build:production"
+  publish = "r4/dist"
+
+[context.production]
+  command = "npm --prefix r4 run build:production"
+
+[context.deploy-preview]
+  command = "npm --prefix r4 test && npm --prefix r4 run build:preview"
+
+[context.branch-deploy]
+  command = "npm --prefix r4 test && npm --prefix r4 run build:preview"
